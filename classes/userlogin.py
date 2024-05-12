@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-@author: António Brito / Carlos Bragança
-(2022)
-#objective: class Person
-"""""
-#%% Class User - generic version
-# import sys
+Created on Thu May  2 11:38:36 2024
+
+@author: maria
+"""
+
 import bcrypt
-# Import the generic class
 from classes.gclass import Gclass
 
 class Userlogin(Gclass):
@@ -17,37 +15,22 @@ class Userlogin(Gclass):
     sortkey = ''
     auto_number = 0
     nkey = 1
-    # class attributes, identifier attribute must be the first one on the list
-    att = ['_user','_usergroup','_password']
-    # Class header title
-    header = 'Users'
-    # field description for use in, for example, in input form
-    des = ['User','User group','Password']
+    att = ['_name', '_password']
+    header = 'Staff'
+    des = ['Name','Password']
     username = ''
-    # Constructor: Called when an object is instantiated
-    def __init__(self, user, usergroup, password):
-        super().__init__()
-        # Object attributes
-        self._user = user
-        self._usergroup = usergroup
-        self._password = password
-        # Add the new object to the dictionary of objects
-        Userlogin.obj[user] = self
-        # Add the code to the list of object codes
-        Userlogin.lst.append(user)
 
-    # code property getter method
+    def __init__(self, name, password):
+        super()._init_()
+        self._name = name
+        self._password = password
+        Userlogin.obj[name] = self
+        Userlogin.lst.append(name)
+
     @property
-    def user(self):
-        return self._user
-    # name property getter method
-    @property
-    def usergroup(self):
-        return self._usergroup
-    @usergroup.setter
-    def usergroup(self, usergroup):
-        self._usergroup = usergroup
-        
+    def name(self):
+        return self._name
+    
     @property
     def password(self):
         return ""
@@ -67,7 +50,13 @@ class Userlogin(Gclass):
         else:
             message = 'No existent user'
         return message
+    
     @classmethod
     def set_password(self, password):
         passencrypted = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
         return passencrypted.decode()
+    
+
+        
+        
+        
