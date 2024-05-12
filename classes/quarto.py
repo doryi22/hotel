@@ -1,7 +1,7 @@
 from classes.Gclass import Gclass
 
 class Quarto(Gclass):
-    obj = dict()
+    obj = dict() 
     lst = list()
     pos = 0
     sortkey = ''
