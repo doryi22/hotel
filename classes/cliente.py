@@ -31,8 +31,7 @@ class Cliente(Gclass):
     
     @property
     def dob(self, dob):
-        year, month, day = self._dob.split('-')
-        self._dob.append(datetime.date.fromisoformat(dob))
+        self._dob = datetime.date.fromisoformat(dob)
         return self._dob
     
     @property
