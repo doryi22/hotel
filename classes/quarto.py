@@ -1,4 +1,4 @@
-from classes.Gclass import Gclass
+from classes.gclass import Gclass
 
 class Quarto(Gclass):
     obj = dict() 
@@ -6,28 +6,16 @@ class Quarto(Gclass):
     pos = 0
     sortkey = ''
     auto_number = 0
-    att = ['_client_code', '_name', '_dob', '_porta', '_cod_tipo']
-    des = ['Client Code', 'Name', 'Date of Birth', 'Porta', 'Cod Tipo']
+    att = ['_porta', '_cod_tipo']
+    des = ['Porta', 'Cod Tipo']
     
-    def __init__(self, _client_code, _name, _dob, porta, cod_tipo):
+    def __init__(self,porta,cod_tipo):
         super().__init__()
-        self._client_code = _client_code 
-        self._name = _name
-        self._dob = _dob
         self._porta = porta 
         self._cod_tipo = cod_tipo
+        Quarto.obj[porta] = self
+        Quarto.lst.append(porta)
 
-    @property
-    def client_code(self):
-        return self._client_code
-    
-    @property
-    def name(self):
-        return self._name
-    
-    @property
-    def dob(self):
-        return self._dob
     
     @property
     def porta(self):
