@@ -9,7 +9,7 @@ class Quarto(Gclass):
     att = ['_porta', '_cod_tipo']
     des = ['Porta', 'Cod Tipo']
     
-    def __init__(self,porta,cod_tipo):
+    def __init__(self, porta, cod_tipo):
         super().__init__()
         self._porta = porta 
         self._cod_tipo = cod_tipo

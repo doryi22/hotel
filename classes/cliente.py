@@ -12,7 +12,7 @@ class Cliente(Gclass):
     des = ['Client Code','Name','Date of Birth']
 
     def __init__(self, client_code, name, npessoas):
-        super().init()
+        super().__init__()
         self._client_code = client_code
         self._name = name
         self._dob = None

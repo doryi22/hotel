@@ -19,7 +19,7 @@ class Reserva(Gclass):
     des = ['Código de reserva', 'Data inicio', 'Data fim', 'Código de refeição', 'Código do Cliente', 'Opiniao', 'User']
 
     def __init__(self, cod_reserva, data_inicio, data_fim, cod_refeicao, client_code, opiniao='', user=''):
-        super().init()
+        super().__init__()
         self._cod_reserva=cod_reserva
         self._data_inicio=data_inicio
         self._data_fim=data_fim
@@ -27,7 +27,8 @@ class Reserva(Gclass):
         self._client_code=client_code
         self._opiniao=opiniao
         self._user=user
-        
+        Reserva.obj[cod_reserva] = self
+        Reserva.lst.append(cod_reserva)
     @property
     def cod_reserva(self):
         return self._cod_reserva

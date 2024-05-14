@@ -19,8 +19,8 @@ class TipoRefeicao(Gclass):
     
     des = ["Código da refeição", "Nome da refeição", "Valor"]
     
-    def _init_(self, cod_refeicao, nome_refeicao, valor):
-        super()._init_()
+    def __init__(self, cod_refeicao, nome_refeicao, valor):
+        super().__init__()
         self._cod_refeicao = cod_refeicao
         self._nome_refeicao = nome_refeicao
         self._valor = valor

@@ -14,7 +14,7 @@ class Userlogin(Gclass):
     username = ''
 
     def __init__(self, user, password):
-        super()._init_()
+        super().__init__()
         self._user = user
         self._password = password
         Userlogin.obj[user] = self

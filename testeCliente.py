@@ -11,13 +11,13 @@ from classes.cliente import Cliente
 
 Cliente.read(filename + 'hotel.db')
 
-obj = Cliente.from_string("ab123;alberto;4;1999-05-23")
+obj = Cliente.from_string("ab123;alberto;4")
 
 print("objeto sem estar gravado ",obj)
 
 Cliente.insert(getattr(obj,Cliente.att[0]))
 
-obj = Cliente.from_string("cd123;maria;3;1999-08-02")
+obj = Cliente.from_string("cd123;maria;3")
 Cliente.insert(getattr(obj,Cliente.att[0]))
 
 
