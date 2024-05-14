@@ -5,7 +5,7 @@ Created on Thu May  2 11:44:10 2024
 @author: maria
 """
 
-from classes.Gclass import Gclass
+from classes.gclass import Gclass
 import datetime
 
 class Cliente(Gclass):

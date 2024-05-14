@@ -16,10 +16,10 @@ class Reserva(Gclass):
     auto_number = 0
     # class attributes, identifier attribute must be the first one on the list
     att = ['_code_reservation']
-    def _init__(self, code_reservation):
+    def _init__(self, code_reservation,user=''):
         super()._init_()
         self._code_reservation=str(code_reservation)
-        
+        self._user=user
     @property 
     def code_reservation(self):
         return self._code_reservation

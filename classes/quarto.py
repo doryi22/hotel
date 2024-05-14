@@ -1,4 +1,4 @@
-from classes.Gclass import Gclass
+from classes.gclass import Gclass
 
 class Quarto(Gclass):
     obj = dict() 
@@ -16,10 +16,16 @@ class Quarto(Gclass):
         self._dob = _dob
         self._porta = porta 
         self._cod_tipo = cod_tipo
+        Quarto.obj[_client_code] = self
+        Quarto.lst.append(_client_code)
 
     @property
     def client_code(self):
         return self._client_code
+    
+    @client_code.setter
+    def client_code(self, novo_code):
+        self._client_code = novo_code
     
     @property
     def name(self):
