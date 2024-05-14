@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu May  2 11:44:10 2024
-
-@author: maria
-"""
-
 from classes.gclass import Gclass
 import datetime
 
@@ -18,11 +11,11 @@ class Cliente(Gclass):
     att = ['_client_code','_name', '_dob']
     des = ['Client Code','Name','Date of Birth']
 
-    def __init__(self, client_code, name, npessoas, dob):
+    def __init__(self, client_code, name, npessoas):
         super().init()
         self._client_code = client_code
         self._name = name
-        self._dob = dob
+        self._dob = None
         self._idade = None
         self._npessoas = npessoas
         Cliente.obj[client_code] = self
@@ -37,9 +30,9 @@ class Cliente(Gclass):
         return self._name
     
     @property
-    def dob(self):
+    def dob(self, dob):
         year, month, day = self._dob.split('-')
-        self._dob.append(datetime.date(int(year), int(month), int(day)))
+        self._dob.append(datetime.date.fromisoformat(dob))
         return self._dob
     
     @property

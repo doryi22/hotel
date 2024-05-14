@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu May  2 11:38:36 2024
-
-@author: maria
-"""
-
 import bcrypt
 from classes.gclass import Gclass
 
@@ -15,21 +8,21 @@ class Userlogin(Gclass):
     sortkey = ''
     auto_number = 0
     nkey = 1
-    att = ['_name', '_password']
+    att = ['_user', '_password']
     header = 'Staff'
-    des = ['Name','Password']
+    des = ['User','Password']
     username = ''
 
-    def __init__(self, name, password):
+    def __init__(self, user, password):
         super()._init_()
-        self._name = name
+        self._user = user
         self._password = password
-        Userlogin.obj[name] = self
-        Userlogin.lst.append(name)
+        Userlogin.obj[user] = self
+        Userlogin.lst.append(user)
 
     @property
-    def name(self):
-        return self._name
+    def user(self):
+        return self._user
     
     @property
     def password(self):
