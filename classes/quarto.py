@@ -15,7 +15,6 @@ class Quarto(Gclass):
         self._cod_tipo = cod_tipo
         Quarto.obj[porta] = self
         Quarto.lst.append(porta)
-
     
     @property
     def porta(self):
