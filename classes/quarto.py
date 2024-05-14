@@ -23,3 +23,4 @@ class Quarto(Gclass):
     @property
     def cod_tipo(self):
         return self._cod_tipo
+    
