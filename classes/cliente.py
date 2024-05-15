@@ -9,6 +9,7 @@ class Cliente(Gclass):
     sortkey = ''
     auto_number = 0
     att = ['_client_code','_name', '_dob', '_idade', '_npessoas']
+    header = 'Cliente'
     des = ['Client Code','Name','Date of Birth','Idade','NPessoas']
 
     def __init__(self, client_code, name, npessoas):

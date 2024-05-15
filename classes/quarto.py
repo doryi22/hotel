@@ -7,6 +7,7 @@ class Quarto(Gclass):
     sortkey = ''
     auto_number = 0
     att = ['_porta', '_cod_tipo']
+    header = 'Quarto'
     des = ['Porta', 'Cod Tipo']
     
     def __init__(self, porta, cod_tipo):
