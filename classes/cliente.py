@@ -8,11 +8,12 @@ class Cliente(Gclass):
     pos = 0
     sortkey = ''
     auto_number = 0
-    att = ['_client_code','_name', '_dob']
-    des = ['Client Code','Name','Date of Birth']
+    att = ['_client_code','_name', '_dob', '_idade', '_npessoas']
+    header = 'Cliente'
+    des = ['Client Code','Name','Date of Birth','Idade','NPessoas']
 
     def __init__(self, client_code, name, npessoas):
-        super().init()
+        super().__init__()
         self._client_code = client_code
         self._name = name
         self._dob = None
@@ -31,12 +32,11 @@ class Cliente(Gclass):
     
     @property
     def dob(self, dob):
-        year, month, day = self._dob.split('-')
-        self._dob.append(datetime.date.fromisoformat(dob))
+        self._dob = datetime.date.fromisoformat(dob)
         return self._dob
     
     @property
-    def idades(self):
+    def idade(self):
         tday = datetime.date.today()
         age = tday.year - self.dob.year
         if tday.month < self.dob.month or \
