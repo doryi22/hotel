@@ -8,8 +8,8 @@ class Cliente(Gclass):
     pos = 0
     sortkey = ''
     auto_number = 0
-    att = ['_client_code','_name', '_dob']
-    des = ['Client Code','Name','Date of Birth']
+    att = ['_client_code','_name', '_dob', '_idade', '_npessoas']
+    des = ['Client Code','Name','Date of Birth','Idade','NPessoas']
 
     def __init__(self, client_code, name, npessoas):
         super().__init__()
@@ -35,7 +35,7 @@ class Cliente(Gclass):
         return self._dob
     
     @property
-    def idades(self):
+    def idade(self):
         tday = datetime.date.today()
         age = tday.year - self.dob.year
         if tday.month < self.dob.month or \
