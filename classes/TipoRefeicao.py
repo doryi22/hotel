@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May 15 22:57:00 2024
-
-@author: 1906t
-"""
-
 from classes.gclass import Gclass
 class TipoRefeicao(Gclass):
     obj = dict()
