@@ -15,10 +15,10 @@ class Reserva(Gclass):
     pos = 0
     sortkey = ''
     auto_number = 0
-    att = ['_cod_reserva', '_data_inicio', '_data_fim', '_cod_refeicao', '_client_code','_opiniao', '_user']
-    des = ['Código de reserva', 'Data inicio', 'Data fim', 'Código de refeição', 'Código do Cliente', 'Opiniao', 'User']
+    att = ['_cod_reserva', '_data_inicio', '_data_fim', '_cod_refeicao', '_client_code','_opiniao', '_user', '_npessoas', '_valor_final']
+    des = ['Código de reserva', 'Data inicio', 'Data fim', 'Código de refeição', 'Código do Cliente', 'Opiniao', 'User', 'Número de pessoas', 'Valor da Estadia']
 
-    def __init__(self, cod_reserva, data_inicio, data_fim, cod_refeicao, client_code, opiniao='', user=''):
+    def __init__(self, cod_reserva, data_inicio, data_fim, cod_refeicao, client_code, opiniao='', user='', npessoas=0, valor_final=0):
         super().__init__()
         self._cod_reserva=cod_reserva
         self._data_inicio=data_inicio
@@ -27,6 +27,8 @@ class Reserva(Gclass):
         self._client_code=client_code
         self._opiniao=opiniao
         self._user=user
+        self._npessoas=npessoas
+        self._valor_final=valor_final
         Reserva.obj[cod_reserva] = self
         Reserva.lst.append(cod_reserva)
     @property
@@ -47,4 +49,13 @@ class Reserva(Gclass):
     @opiniao.setter 
     def opiniao(self, comentario):
         self._opiniao=comentario
+        
+    @property 
+    def npessoas(self):
+        return self._npessoas
+    
+    @property 
+    def valor_final(self):
+        return self._valor_final
+    
         
