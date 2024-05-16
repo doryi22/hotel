@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May 15 21:47:18 2024
-
-@author: maria
-"""
-
 from classes.gclass import Gclass
 class TipoQuarto(Gclass):
     obj = dict()
@@ -14,17 +7,18 @@ class TipoQuarto(Gclass):
     auto_number = 0
     nkey = 1
     
-    att = ["_cod_tipo", "_descricao", "_capacidade"]
+    att = ["_cod_tipo", "_descricao", "_capacidade", "_valor"]
     
     header = "Tipo de Quarto"
     
-    des = ["Código do tipo de quarto", "Descrição do tipo de quarto", "Capacidade do tipo de quarto"]
+    des = ["Código do tipo de quarto", "Descrição do tipo de quarto", "Capacidade do tipo de quarto", "Valor"]
     
-    def __init__(self, cod_tipo, descricao, capacidade):
+    def __init__(self, cod_tipo, descricao, capacidade, valor):
         super().__init__()
         self._cod_tipo = cod_tipo
         self._descricao = descricao
         self._capacidade = capacidade
+        self._valor=valor
         
         TipoQuarto.obj[cod_tipo] = self
         TipoQuarto.lst.append(cod_tipo)
@@ -40,3 +34,7 @@ class TipoQuarto(Gclass):
     @property 
     def capacidade(self):
         return self._capacidade
+    
+    @property 
+    def valor(self):
+        return self._valor 

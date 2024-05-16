@@ -1,10 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun May 12 12:16:04 2024
-
-@author: inesr
-"""
-
+from tipoquarto import TipoQuarto
+from tiporefeicao import TipoRefeicao
 from classes.gclass import Gclass
 import datetime
 
@@ -21,6 +16,15 @@ class Reserva(Gclass):
 
     def __init__(self, cod_reserva, data_inicio, data_fim, cod_refeicao, client_code, cod_tipo=None, opiniao='', user='', npessoas=0, valor_final=0):
         super().__init__()
+        if cod_tipo and cod_tipo in TipoQuarto.obj:
+            tipo = TipoQuarto.obj[cod_tipo]
+            if npessoas > tipo.capacidade:
+            	raise ValueError (f"Nº pessoas maior que a capacidade do quarto")
+            else:
+                self._npessoas = npessoas
+        else:
+            self._npessoas=npessoas
+            
         self._cod_reserva=cod_reserva
         self._data_inicio=data_inicio
         self._data_fim=data_fim
@@ -29,10 +33,10 @@ class Reserva(Gclass):
         self._cod_tipo = cod_tipo
         self._opiniao=opiniao
         self._user=user
-        self._npessoas=npessoas
         self._valor_final=valor_final
         Reserva.obj[cod_reserva] = self
         Reserva.lst.append(cod_reserva)
+
         
     @property
     def cod_reserva(self):
@@ -59,6 +63,14 @@ class Reserva(Gclass):
     
     @property 
     def valor_final(self):
-        return self._valor_final
-    
+        data_inicio_date = datetime.date.fromisoformat(self.data_inicio)
+        data_fim_date = datetime.date.fromisoformat(self.data_fim)
+        num_days = (data_fim_date - data_inicio_date).days
+        tipo_quarto = TipoQuarto.obj[self._cod_tipo]
+        tipo_refeicao = TipoRefeicao.obj[self._cod_refeicao]
+        valor_final = num_days * (tipo_quarto.valor + self._npessoas*tipo_refeicao.valor)
+        return valor_final
+       
+
+
         
