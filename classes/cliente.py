@@ -8,17 +8,16 @@ class Cliente(Gclass):
     pos = 0
     sortkey = ''
     auto_number = 0
-    att = ['_client_code','_name', '_npessoas', '_dob', '_idade']
+    att = ['_client_code','_name', '_dob', '_idade']
     header = 'Cliente'
-    des = ['Client Code','Name','NPessoas','Date of Birth','Idade']
+    des = ['Client Code','Name','Date of Birth','Idade']
 
-    def __init__(self, client_code, name, npessoas, dob, idade=None):
+    def __init__(self, client_code, name, dob, idade=None):
         super().__init__()
         self._client_code = client_code
         self._name = name
         self._dob = dob
         self._idade = None
-        self._npessoas = npessoas
         Cliente.obj[client_code] = self
         Cliente.lst.append(client_code)
         
