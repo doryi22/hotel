@@ -1,4 +1,5 @@
 from classes.gclass import Gclass
+
 class TipoQuarto(Gclass):
     obj = dict()
     lst = list()

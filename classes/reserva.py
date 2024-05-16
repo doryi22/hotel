@@ -1,5 +1,5 @@
-from tipoquarto import TipoQuarto
-from tiporefeicao import TipoRefeicao
+from classes.tipoquarto import TipoQuarto
+from classes.tiporefeicao import TipoRefeicao
 from classes.gclass import Gclass
 import datetime
 
