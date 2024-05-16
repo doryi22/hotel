@@ -3,19 +3,19 @@ from datafile import filename
 
 import os
 
-from classes.customer import Customer
-from classes.product import Product
-from classes.customerorder import CustomerOrder
-from classes.orderproduct import OrderProduct
+from classes.cliente import Cliente
+from classes.quarto import Quarto
+from classes.reserva import Reserva
+from classes.tipoquarto import TipoQuarto
 from classes.userlogin import Userlogin
 
 app = Flask(__name__)
 
-Customer.read(filename + 'business.db')
-Product.read(filename + 'business.db')
-CustomerOrder.read(filename + 'business.db')
-OrderProduct.read(filename + 'business.db')
-Userlogin.read(filename + 'business.db')
+Cliente.read(filename + 'hotel.db')
+Quarto.read(filename + 'hotel.db')
+Reserva.read(filename + 'hotel.db')
+TipoQuarto.read(filename + 'hotel.db')
+Userlogin.read(filename + 'hotel.db')
 prev_option = ""
 submenu = ""
 app.secret_key = 'BAD_SECRET_KEY'
@@ -78,7 +78,7 @@ def subform(cname=""):
     return gfsubsub.subform(cname,submenu)
 
 
-@app.route("/productform", methods=["post","get"])
+@app.route("/quartoform", methods=["post","get"])
 def productFoto():
     submenu = request.args.get("subm")
     cname = 'Product'
@@ -95,8 +95,7 @@ def uc():
     return render_template("uc.html", ulogin=session.get("user"),submenu=submenu)
 
 
-
-    
 if __name__ == '__main__':
     app.run(debug=True,port=6001)
     #app.run()
+

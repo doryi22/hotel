@@ -7,12 +7,12 @@
 """""
 from flask import Flask, render_template, request, session
 
-from classes.customer import Customer
-from classes.product import Product
-from classes.customerorder import CustomerOrder
-from classes.orderproduct import OrderProduct
+from classes.cliente import Cliente
+from classes.quarto import Quarto
+from classes.reserva import Reserva
+from classes.tipoquarto import TipoQuarto
 from classes.userlogin import Userlogin
-from classes.order2Form import Order2Form
+#from classes.order2Form import Order2Form
 
 from datetime import timedelta
 from datetime import datetime
@@ -21,7 +21,7 @@ prev_option = ""
 
 def gerah(clh):
     clh.reset()
-    clh("None", CustomerOrder, diahoraselected, 9, 12)
+    clh("None", Reserva, diahoraselected, 9, 12)
     objh = clh.obj[clh.lst[0]]
     return objh
     
@@ -117,4 +117,6 @@ def hform(cname='',submenu=""):
                         submenu=submenu)
     else:
         return render_template("index.html", ulogin=ulogin)
+    
+
 

@@ -9,7 +9,7 @@ from flask import Flask, render_template, request, session
 from werkzeug.utils import secure_filename
 import os
 
-from classes.product import Product
+from classes.quarto import Quarto
 
 prev_option = ""
 img = ""

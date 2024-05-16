@@ -6,10 +6,10 @@
 
 """""
 from flask import Flask, render_template, request, session
-from classes.customer import Customer
-from classes.product import Product
-from classes.customerorder import CustomerOrder
-from classes.orderproduct import OrderProduct
+from classes.cliente import Cliente
+from classes.quarto import Quarto
+from classes.reserva import Reserva
+from classes.tipoquarto import TipoQuarto
 from classes.userlogin import Userlogin
 
 prev_option = ""
@@ -75,3 +75,4 @@ def gform(cname='',submenu=""):
                         submenu=submenu)
     else:
         return render_template("index.html", ulogin=ulogin)
+    
