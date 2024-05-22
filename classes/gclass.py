@@ -10,6 +10,7 @@ import sys
 import datetime
 import sqlite3
 class Gclass:
+    path = '/hotel/data/hotel.db'
     # Constructor: Called when an object is instantiated
     def __init__(self):
         pass

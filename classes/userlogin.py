@@ -12,7 +12,9 @@ class Userlogin(Gclass):
     header = 'Staff'
     des = ['User','Password']
     username = ''
-
+    
+    path = '/hotel/data/hotel.db'
+    
     def __init__(self, user, password):
         super().__init__()
         self._user = user
@@ -48,3 +50,7 @@ class Userlogin(Gclass):
     def set_password(self, password):
         passencrypted = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
         return passencrypted.decode()
+
+obj = Userlogin("root",Userlogin.set_password("1234"))
+Userlogin.insert(obj.user)
+Userlogin.last()
