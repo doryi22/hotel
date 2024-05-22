@@ -48,8 +48,3 @@ class Userlogin(Gclass):
     def set_password(self, password):
         passencrypted = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
         return passencrypted.decode()
-    
-
-        
-        
-        

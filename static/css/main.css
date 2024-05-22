@@ -12,7 +12,7 @@ nav{
     margin: 0;
     padding: 8px;
     height: 100%;
-    background-color: #334a94;
+    background-color: #696969;
 
 }
 
@@ -21,31 +21,32 @@ nav{
 }
 
 .button{
-    font-family: Arial;
+    font-family: Garamond;
     font-size: 1em;
     font-style: none;
-    color: #ffffff;
+    color: #696969;
     padding: 8px;
     text-decoration: none;
 }
 
 .button:link{
-    background-color: #334a94;
-    color: #ffffff;
+    background-color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .button:hover{
-    background-color: lightblue;
+    background-color: lightgray;
 }
 
 .dados{
         text-align: center;
-        font-size: 1em;
+        font-size: 1em
+        font-family: Garamond;
 }
 
 .button1{
-    font-family: Arial;
-    background-color: #334a94;
+    font-family: Garamond;
+    background-color: #696969;
     font-size: 1em;
     font-style: none;
     color: white;
@@ -54,20 +55,20 @@ nav{
 }
 
 .button1:link{
-    background-color: #334a94;
-    color: #ffffff;
+    background-color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 .button1:hover{
-    background-color: lightblue;
+    background-color: gray;
 }
 
 .button1:disabled{
-    background-color: lightgray;
+    background-color: gray;
 }
 
 table {
-  font-family: arial, sans-serif;
+  font-family: Garamond;
   border-collapse: collapse;
   width: 50%;
   margin-left: auto; 
@@ -78,8 +79,19 @@ td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  font-family: Garamond;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #FFFFFF;
+}
+
+
+body {
+    font-family: Garamond;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 3em;
 }
