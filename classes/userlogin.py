@@ -13,8 +13,6 @@ class Userlogin(Gclass):
     des = ['User','Password']
     username = ''
     
-    path = '/hotel/data/hotel.db'
-    
     def __init__(self, user, password):
         super().__init__()
         self._user = user

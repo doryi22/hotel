@@ -14,8 +14,8 @@ class Gclass:
     # Constructor: Called when an object is instantiated
     def __init__(self):
         pass
-#################################################        
-# generic code: no need to change for a new class    
+
+    # generic code: no need to change for a new class    
     # Class method to implement constructor overloading
     @classmethod
     def from_string(cls, str_data):
