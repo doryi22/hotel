@@ -1,4 +1,5 @@
 from classes.gclass import Gclass
+# from classes.tipoquarto import TipoQuarto
 
 class Quarto(Gclass):
     obj = dict() 
@@ -23,5 +24,6 @@ class Quarto(Gclass):
     
     @property
     def cod_tipo(self):
+        # resul = TipoQuarto[self._cod_tipo].descricao
+        # self._cod_tipo = resul
         return self._cod_tipo
-    

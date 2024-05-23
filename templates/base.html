@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Reserva demo PCII</title>
+    <title>FEUP Beach Club</title>
     {% block title %}
     {% endblock %}
   </head>
@@ -16,21 +16,17 @@
                     <li><a class="button" href="/logoff">Logoff</a></li>
                     <li><a class="button" href="/gform/Cliente">Cliente</a></li>
                     
-                    <li><a class="button" href="/submenu?subm=quarto">Quarto</a></li>
                     <li><a class="button" href="/submenu?subm=order">Reserva</a></li>
-                    
                     
                     
                     <li><a class="button" style="color:lightblue">User: {{ulogin}}</a></li>
                     
                     <br><br>
                     {% if submenu == "order" %}
-                        <li><a class="button" href="/subform/Reserva_TipoQuarto?option=''&subm=order">Order lines</a></li>
-                        <li><a class="button" href="/order/mapa?option=''">Mapa encomendas</a></li>
-                    {% endif %} 
-                    
-                    {% if submenu == "quarto" %}
-                        <li><a class="button" href="/gform/Quarto?subm=quarto">Quarto</a></li>
+                        <li><a class="button" href="/gform/Reserva?subm=order">Reserva</a></li>
+                        <li><a class="button" href="/productform?subm=order">Product(foto)</a></li>
+                        <li><a class="button" href="/subform/Quarto_TipoQuarto?option=''&subm=order">Quarto</a></li>
+                        <li><a class="button" href="/gformT/TipoRefeicao?option=''&subm=order">Refeições</a></li>
                     {% endif %} 
                     
                     

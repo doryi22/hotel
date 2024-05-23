@@ -17,7 +17,7 @@ class Cliente(Gclass):
         self._client_code = client_code
         self._name = name
         self._dob = dob
-        self._idade = None
+        self._idade = idade
         Cliente.obj[client_code] = self
         Cliente.lst.append(client_code)
         
@@ -43,5 +43,3 @@ class Cliente(Gclass):
             (tday.month == self.dob.month and tday.day < self.dob.day):
             age -= 1
             self._idades = age 
-
-    

@@ -11,6 +11,7 @@ from classes.quarto import Quarto
 from classes.reserva import Reserva
 from classes.tipoquarto import TipoQuarto
 from classes.userlogin import Userlogin
+from classes.tiporefeicao import TipoRefeicao
 
 prev_option = ""
 

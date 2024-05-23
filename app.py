@@ -8,6 +8,7 @@ from classes.quarto import Quarto
 from classes.reserva import Reserva
 from classes.tipoquarto import TipoQuarto
 from classes.userlogin import Userlogin
+from classes.tiporefeicao import TipoRefeicao
 
 app = Flask(__name__)
 
@@ -16,6 +17,7 @@ Quarto.read(filename + 'hotel.db')
 Reserva.read(filename + 'hotel.db')
 TipoQuarto.read(filename + 'hotel.db')
 Userlogin.read(filename + 'hotel.db')
+TipoRefeicao.read(filename + 'hotel.db')
 prev_option = ""
 submenu = ""
 app.secret_key = 'BAD_SECRET_KEY'
@@ -78,7 +80,7 @@ def subform(cname=""):
     return gfsubsub.subform(cname,submenu)
 
 
-@app.route("/quartoform", methods=["post","get"])
+@app.route("/tipoquartoform", methods=["post","get"])
 def productFoto():
     submenu = request.args.get("subm")
     cname = 'Product'
