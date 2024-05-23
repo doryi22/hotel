@@ -8,9 +8,9 @@ class Cliente(Gclass):
     pos = 0
     sortkey = ''
     auto_number = 0
-    att = ['_client_code','_name', '_dob', '_idade']
+    att = ['_client_code','_name', '_dob']
     header = 'Cliente'
-    des = ['Client Code','Name','Date of Birth','Idade']
+    des = ['Client Code','Name','Date of Birth']
 
     def __init__(self, client_code, name, dob):
         super().__init__()
