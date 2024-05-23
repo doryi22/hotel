@@ -10,8 +10,10 @@
     <body>
         <nav>
             <ul class="menu">
+                
                 {% if ulogin == None %}
                     <li><a class="button" href="/login">Login</a></li>
+                    <li><a class="button" href="/sobrenos">Sobre Nós</a></li>
                 {% else %}
                     <li><a class="button" href="/logoff">Logoff</a></li>
                     <li><a class="button" href="/gform/Cliente">Cliente</a></li>
@@ -24,7 +26,7 @@
                     <br><br>
                     {% if submenu == "order" %}
                         <li><a class="button" href="/gform/Reserva?subm=order">Reserva</a></li>
-                        <li><a class="button" href="/productform?subm=order">Product(foto)</a></li>
+                        <li><a class="button" href="/productform?subm=order">Tipo de Quarto</a></li>
                         <li><a class="button" href="/subform/Quarto_TipoQuarto?option=''&subm=order">Quarto</a></li>
                         <li><a class="button" href="/gformT/TipoRefeicao?option=''&subm=order">Refeições</a></li>
                     {% endif %} 

@@ -12,12 +12,12 @@ class Cliente(Gclass):
     header = 'Cliente'
     des = ['Client Code','Name','Date of Birth','Idade']
 
-    def __init__(self, client_code, name, dob, idade=None):
+    def __init__(self, client_code, name, dob):
         super().__init__()
         self._client_code = client_code
         self._name = name
         self._dob = dob
-        self._idade = idade
+        self._idade = self.idade
         Cliente.obj[client_code] = self
         Cliente.lst.append(client_code)
         
@@ -42,4 +42,4 @@ class Cliente(Gclass):
         if tday.month < self.dob.month or \
             (tday.month == self.dob.month and tday.day < self.dob.day):
             age -= 1
-            self._idades = age 
+        return age 

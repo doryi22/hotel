@@ -80,10 +80,10 @@ def subform(cname=""):
     return gfsubsub.subform(cname,submenu)
 
 
-@app.route("/tipoquartoform", methods=["post","get"])
+@app.route("/productform", methods=["post","get"])
 def productFoto():
     submenu = request.args.get("subm")
-    cname = 'Product'
+    cname = 'TipoQuarto'
     return productFotosub.productFoto(app,cname,submenu)
 
 @app.route("/order/mapa", methods=["post","get"])
