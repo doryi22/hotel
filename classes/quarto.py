@@ -22,8 +22,14 @@ class Quarto(Gclass):
     def porta(self):
         return self._porta
     
+    @porta.setter 
+    def porta(self,valor):
+        self._porta=valor 
+        
     @property
     def cod_tipo(self):
-        # resul = TipoQuarto[self._cod_tipo].descricao
-        # self._cod_tipo = resul
         return self._cod_tipo
+    
+    @cod_tipo.setter 
+    def cod_tipo(self,valor):
+        self._cod_tipo=valor

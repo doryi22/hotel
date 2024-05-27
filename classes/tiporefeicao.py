@@ -25,11 +25,23 @@ class TipoRefeicao(Gclass):
     @property 
     def cod_refeicao(self):
         return self._cod_refeicao
+    
+    @cod_refeicao.setter
+    def cod_refeicao(self,valor):
+        self._cod_refeicao=valor
 
     @property 
     def nome_refeicao(self):
         return self._nome_refeicao
     
+    @nome_refeicao.setter
+    def nome_refeicao(self,valor):
+        self._nome_refeicao=valor
+    
     @property 
     def valor(self):
         return self._valor
+    
+    @valor.setter
+    def valor(self,valor):
+        self._valor=valor

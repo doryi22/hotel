@@ -27,18 +27,34 @@ class TipoQuarto(Gclass):
     @property 
     def cod_tipo(self):
         return self._cod_tipo
+    
+    @cod_tipo.setter
+    def cod_tipo(self,valor):
+        self._cod_tipo=valor
 
     @property 
     def descricao(self):
         return self._descricao
+    
+    @descricao.setter
+    def descricao(self,valor):
+        self._descricao=valor
 
     @property 
     def capacidade(self):
         return self._capacidade
+    
+    @capacidade.setter
+    def capacidade(self,valor):
+        self._capacidade=valor
 
     @property 
     def valor(self):
         return self._valor 
+    
+    @valor.setter
+    def valor(self,valor):
+        self._valor=valor
 
     @property
     def foto(self):
