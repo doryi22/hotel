@@ -14,7 +14,7 @@ class Reserva(Gclass):
     header = 'Reserva'
     des = ['Código de reserva', 'Data inicio', 'Data fim', 'Código de refeição', 'Código do Cliente','Código TipoQuarto', 'Opiniao', 'User', 'Número de pessoas', 'Valor da Estadia']
 
-    def __init__(self, cod_reserva, data_inicio, data_fim, cod_refeicao, client_code, cod_tipo=None, opiniao='', user='', npessoas=0):
+    def __init__(self, cod_reserva, data_inicio, data_fim, cod_refeicao, client_code, cod_tipo=None, opiniao='', user='', npessoas=0, valor_final=0):
         super().__init__()
         if cod_tipo and cod_tipo in TipoQuarto.obj:
             tipo = TipoQuarto.obj[cod_tipo]
@@ -33,7 +33,7 @@ class Reserva(Gclass):
         self._cod_tipo = cod_tipo
         self._opiniao=opiniao
         self._user=user
-        self._valor_final = self.valor_final
+        self._valor_final=valor_final
         Reserva.obj[cod_reserva] = self
         Reserva.lst.append(cod_reserva)
 
@@ -60,11 +60,10 @@ class Reserva(Gclass):
     def opiniao(self, comentario):
         self._opiniao=comentario
         
-    
     @property 
     def valor_final(self):
-        data_inicio_date = self.data_inicio
-        data_fim_date = self.data_fim
+        data_inicio_date = datetime.date.fromisoformat(self.data_inicio)
+        data_fim_date = datetime.date.fromisoformat(self.data_fim)
         num_days = (data_fim_date - data_inicio_date).days
         tipo_quarto = TipoQuarto.obj[self._cod_tipo]
         tipo_refeicao = TipoRefeicao.obj[self._cod_refeicao]

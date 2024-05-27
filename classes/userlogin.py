@@ -12,7 +12,7 @@ class Userlogin(Gclass):
     header = 'Staff'
     des = ['User','Password']
     username = ''
-    
+
     def __init__(self, user, password):
         super().__init__()
         self._user = user
@@ -23,11 +23,11 @@ class Userlogin(Gclass):
     @property
     def user(self):
         return self._user
-    
+
     @property
     def password(self):
         return ""
-    
+
     @password.setter
     def password(self, password):
         self._password = password
@@ -43,7 +43,7 @@ class Userlogin(Gclass):
         else:
             message = 'No existent user'
         return message
-    
+
     @classmethod
     def set_password(self, password):
         passencrypted = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
